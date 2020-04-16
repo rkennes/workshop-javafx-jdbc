@@ -2,22 +2,19 @@ package model.entities;
 
 import java.io.Serializable;
 
-public class Department implements Serializable{
-	
-	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	private Integer id; 
-	private String nome; 
-	
-	public Department() {}
+public class Department implements Serializable {
 
-	public Department(Integer id, String nome) {
-		super();
+	private static final long serialVersionUID = 1L;
+
+	private Integer id;
+	private String name;
+	
+	public Department() {
+	}
+
+	public Department(Integer id, String name) {
 		this.id = id;
-		this.nome = nome;
+		this.name = name;
 	}
 
 	public Integer getId() {
@@ -28,12 +25,12 @@ public class Department implements Serializable{
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getName() {
+		return name;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	@Override
@@ -41,7 +38,6 @@ public class Department implements Serializable{
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		return result;
 	}
 
@@ -59,21 +55,11 @@ public class Department implements Serializable{
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		if (nome == null) {
-			if (other.nome != null)
-				return false;
-		} else if (!nome.equals(other.nome))
-			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Department [id=" + id + ", nome=" + nome + "]";
+		return "Department [id=" + id + ", name=" + name + "]";
 	}
-	
-	
-	
-	
-	
 }
